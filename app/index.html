@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Atlas — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 6h20v6a10 10 0 0 1-20 0V6z"/><path d="M14 9H6v3a8 8 0 0 0 8 8M34 9h8v3a8 8 0 0 1-8 8"/><path d="M24 22v8M18 36h12l-2-6H20l-2 6z"/></svg>
+      <div>
+        <h1>LEONIDA TROPHY ATLAS</h1>
+        <p class="subtitle">GTA VI &mdash; 55 trophies &mdash; roadmap to platinum</p>
+      </div>
+    </div>
+    <div class="header-stats">
+      <div class="big-number"><span id="earnedCount">0</span><span class="big-total">/ 55</span></div>
+      <p class="big-label">TROPHIES EARNED</p>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-bar"><div id="progressFill" class="progress-fill" style="width:0%"></div></div>
+    <p id="gradeCounts" class="grade-counts"></p>
+  </div>
+</header>
+
+<nav class="controls" aria-label="Tracker controls">
+  <div class="controls-row">
+    <input id="searchBox" type="search" placeholder="Search trophies by name or description&hellip;" aria-label="Search trophies">
+    <label class="spoiler-toggle"><input id="spoilerToggle" type="checkbox"> <span class="toggle-pill"></span> SPOILER MODE <span class="toggle-hint">hides story trophies until earned</span></label>
+  </div>
+  <div class="controls-row">
+    <div id="filterChips" class="filter-chips" role="group" aria-label="Filter by kind">
+      <button type="button" data-filter="all" class="chip active">ALL <span class="chip-count" data-count-for="all"></span></button>
+      <button type="button" data-filter="story" class="chip">STORY <span class="chip-count" data-count-for="story"></span></button>
+      <button type="button" data-filter="missable" class="chip chip-missable">MISSABLE <span class="chip-count" data-count-for="missable"></span></button>
+      <button type="button" data-filter="collectibles" class="chip">COLLECTIBLES <span class="chip-count" data-count-for="collectibles"></span></button>
+      <button type="button" data-filter="activities" class="chip">ACTIVITIES <span class="chip-count" data-count-for="activities"></span></button>
+      <button type="button" data-filter="online" class="chip">ONLINE <span class="chip-count" data-count-for="online"></span></button>
+    </div>
+    <div class="view-tabs" role="group" aria-label="View">
+      <button type="button" id="tabChecklist" class="tab active">CHECKLIST</button>
+      <button type="button" id="tabRoadmap" class="tab">ROADMAP</button>
+    </div>
+  </div>
+  <div class="controls-row">
+    <div class="io-buttons">
+      <button type="button" id="exportBtn" class="io-btn">EXPORT PROGRESS</button>
+      <button type="button" id="importBtn" class="io-btn">IMPORT PROGRESS</button>
+      <input id="importFile" type="file" accept="application/json,.json" hidden>
+    </div>
+    <p class="offline-note">Works fully offline. Progress is saved in this browser only.</p>
+  </div>
+</nav>
+
+<main>
+  <section id="checklistView" class="checklist-view">
+    <div id="trophyList" class="trophy-list" aria-live="polite"></div>
+    <aside id="detailPanel" class="detail-panel" aria-live="polite">
+      <p class="detail-empty">Select a trophy to read its guide, sources and roadmap stage.</p>
+    </aside>
+  </section>
+
+  <section id="roadmapView" class="roadmap-view" hidden>
+    <h2>ROADMAP TO PLATINUM</h2>
+    <p class="roadmap-intro">Six stages, in the order to play them. Story first, then strangers, collectibles and the long grinds — the platinum lands last. Pink flags mark trophies tied to a specific chapter, mission, choice or one-time event: do them when the moment comes.</p>
+    <div id="roadmapStages"></div>
+  </section>
+
+  <section id="emptyState" class="empty-state" hidden></section>
+</main>
+
+<footer class="site-footer">
+  <p>Names, descriptions and grades are the official PlayStation list, as Exophase and PSNProfiles publish it. Every guide is written in our own words and names its sources. No Rockstar logo, artwork or game imagery is used. Fan-made guide, not affiliated with Rockstar Games or PlayStation.</p>
+</footer>
+
+<script src="store.js"></script>
+<script src="roadmap.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
